@@ -81,11 +81,6 @@ function validateBlogRequest(body: BlogRequestData): Response | null {
       JSON.stringify({success: false, error: "Missing required field year"}),
       {status: 400, headers: {"Content-Type": "application/json"}}
     )
-  } else if (body.year.length > 4 || body.year.length < 4) {
-    return new Response(
-      JSON.stringify({success: false, error: "Year must be 4 digits"}),
-      {status: 400, headers: {"Content-Type": "application/json"}}
-    )
   }
 
   if (!body.keyword) {
