@@ -199,7 +199,7 @@ export async function POST(req: Request) {
     console.log("✅ Validation passed. Generating blog TSX code...")
 
     try {
-      generateBlogTSXCode(body).catch(error => {
+      await generateBlogTSXCode(body).catch(error => {
         console.error("❌ Background Blog Generation Error:", error)
       })
 
