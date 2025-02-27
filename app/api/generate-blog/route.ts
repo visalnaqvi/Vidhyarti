@@ -206,14 +206,18 @@ export async function POST(req: Request) {
       return new Response(
         JSON.stringify({
           success: true,
-          message: "Blog generation Triggered Check logs for more info!",
+          message: "Blog generation successful!",
         }),
         {status: 200, headers: {"Content-Type": "application/json"}}
       )
     } catch (error) {
       console.error("❌ Blog Generation Error:", error)
       return new Response(
-        JSON.stringify({success: false, error: "Blog generation failed"}),
+        JSON.stringify({
+          success: false,
+          error:
+            "__________________Blog generation failed_____________________",
+        }),
         {status: 500, headers: {"Content-Type": "application/json"}}
       )
     }
